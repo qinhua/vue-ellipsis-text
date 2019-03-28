@@ -1,4 +1,3 @@
-<br>
 ![](http://github.com/qinhua/vue-ellipsis-text/raw/master/assets/logo.png)
 
 <p align="center">
