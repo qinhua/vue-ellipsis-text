@@ -1,4 +1,4 @@
-<img src="http://github.com/qinhua/vue-ellipsis-text/raw/master/assets/logo.png">
+![](./assets/logo.png) 
 <p align="center">
   <img alt="GitHub release" src="https://img.shields.io/badge/release-v1.0.0-orange.svg?style=for-the-badge"/>
   <img alt="vue" src="https://img.shields.io/badge/vue-2.5.11-green.svg?style=for-the-badge"/>
