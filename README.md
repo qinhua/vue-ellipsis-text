@@ -58,10 +58,10 @@
 
 1、使用npm 下载组件到项目中，引入即可使用
 
-> npm install -s @edu/app-ellipsis-text
+> npm install -s vue-ellipsis-text
 
 ```javascript
-import EllipsisText from "@edu/app-ellipsis-text"
+import EllipsisText from "vue-ellipsis-text"
 
 export default {
   name: "app",
