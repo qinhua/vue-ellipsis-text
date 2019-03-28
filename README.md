@@ -1,5 +1,5 @@
 <br>
-![](./assets/logo.png)
+![](http://github.com/qinhua/vue-ellipsis-text/raw/master/assets/logo.png)
 
 <p align="center">
   <img alt="GitHub release" src="https://img.shields.io/badge/release-v1.0.0-orange.svg?style=for-the-badge"/>
