@@ -16,7 +16,7 @@
     </div>
     <div v-else>
       <div class="ellipsis-content" :style="{'-webkit-line-clamp': line}" ref="txtContent" v-html="content" v-if="isHtml"></div>
-      <div class="ellipsis-content" :style="{'-webkit-line-clamp': line}" ref="txtContent" v-else>{{content}}</div>
+      <div class="ellipsis-content" :style="{'-webkit-line-clamp': line}" ref="txtContent" v-else>{{content | trimEnter}}</div>
     </div>
     <div class="ellipsis-fold-text" v-if="showAll" @click="fold">{{foldText}}</div>
   </div>
@@ -26,7 +26,7 @@
 export default {
   filters: {
     trimEnter(data) {
-      return data ? data.replace(/↵/g, '') : '';
+      return data ? data.replace(/[\r\n]/g, '') : '';
     }
   },
   props: {
