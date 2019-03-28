@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>ellipsis-text</title>
+  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    a,
+    input,
+    button {
+      text-decoration: none;
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    ul,
+    li {
+      list-style: none;
+    }
+    h2 {
+      text-align: center;
+      font-weight: normal;
+      line-height: 3;
+      font-size: 16px;
+      color: #333;
+    }
+    .content-box {
+      width: 80%;
+      min-width:200px;
+      margin: 0 auto;
+    }
+    .content-box li {
+      padding: 20px;
+      margin-bottom: 12px;  
+      background: #fff;
+      border-radius:3px;
+      box-shadow: inset 0px 0px 16px 0 #d1dde6;
+    }
+    .content-box h3 {
+      padding-bottom: 10px;
+      font-weight: normal;
+      line-height: 1.2;
+      font-size: 16px;
+      color: #0a85e0; 
+    }
+  </style>
+  <script src="https://cdn.staticfile.org/vue/2.5.2/vue.min.js"></script>
+  <script src="../dist/ellipsisText.umd.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <h2>文本溢出隐藏组件</h2>
+    <ul class="content-box">
+      <li>
+        <h3>1.单行文字超出显示...</h3>      
+        <ellipsis-text :content="content"/>
+      </li>
+      <li>
+        <h3>2.单行文字超出显示【更多】</h3>      
+        <ellipsis-text :content="content" :has-more="true"/>
+      </li>
+      <li>
+        <h3>3.多行(2行)文字超出显示...</h3>      
+        <ellipsis-text :content="content" :line="2"/>
+      </li>
+      <li>
+        <h3>4.多行(2行)文字超出显示【更多】</h3>      
+        <ellipsis-text :content="content" :has-more="true" :line="2"/>
+      </li>
+      <li>
+        <h3>5.当内容为html片段时，超出(3行)显示【更多】</h3>      
+        <ellipsis-text :content="htmlContent" :has-more="true" :is-html="true" :line="3"/>
+      </li>
+      <li>
+        <h3>6.监听文字展开与收起事件</h3>        
+        <ellipsis-text :content="content" :line="2" :has-more="true" ref="ellipsisText" @reveal="show" @fold="hide"/>
+      </li>
+    </ul>
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data(){
+        return {
+          content:'一场阴谋，让她失去了所有。三年后，当她以优秀新人服装设计师的身份回到了这个城市。一场大秀，她和三年前有机会却并没有碰他的腹黑总裁再次相遇。',
+          htmlContent:'<p>夏雨溪再扭头看看在一旁幸灾乐祸的工作人员，将自己<span style="color:#ff2500">已经有些潮湿的头发</span>拢到了脑后，脸色有难看冷哼了一声<img style="display:inline-block;height:22px;vertical-align: bottom;" src="http://pic2.sc.chinaz.com/Files/pic/Listfaces/4124/18.gif"/>。这人究竟是怎么在JX活下来的？光是凭着她这种想法，要是有一天JX面临破产或者是其他什么倒霉事情，估计这个人二话不说就会把辞呈交上去。“好歹你也是一个美女，怎么气量这么小？”刘明昊说着，从自己的胸口掏出一个帕子将自己身上的水渍擦了下去，看着在自己前面两个大眼睛瞄来瞄去的夏雨溪，脸上满是疑问。</p>'
+        }
+      },
+      methods: {
+        /**
+         * 展开文字
+         */
+        show(data) {
+          alert("展开文字");
+        },
+        /**
+         * 收起文字
+         */
+        hide(data) {
+          alert("收起文字");
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
