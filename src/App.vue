@@ -27,7 +27,7 @@
         <ellipsis-text :content="content" :line="2" :hasMore="true" ref="ellipsisText" @reveal="show" @fold="hide"/>
       </li>
     </ul>    
-    <p class="copyright">Copyright©2019 Chin All Rights Reserved.</p>
+    <p class="copyright">Copyright©2020 Chin All Rights Reserved.</p>
   </div>
 </template>
 <script>
@@ -47,7 +47,7 @@ export default {
         revealWidth: 70, //更多按钮宽度
         revealText: '【详情】', //更多按钮文案
         foldText: '收起', //收起按钮文案
-        htmlContent:'<p>夏雨溪再扭头看看在一旁幸灾乐祸的工作人员，将自己<span style="color:#ff2500">已经有些潮湿的头发</span>拢到了脑后，脸色有难看冷哼了一声<img style="display:inline-block;height:22px;vertical-align: bottom;" src="http://pic2.sc.chinaz.com/Files/pic/Listfaces/4124/18.gif"/>。这人究竟是怎么在JX活下来的？光是凭着她这种想法，要是有一天JX面临破产或者是其他什么倒霉事情，估计这个人二话不说就会把辞呈交上去。“好歹你也是一个美女，怎么气量这么小？”刘明昊说着，从自己的胸口掏出一个帕子将自己身上的水渍擦了下去，看着在自己前面两个大眼睛瞄来瞄去的夏雨溪，脸上满是疑问。</p>'
+        htmlContent:'<p>夏雨溪再扭头看看在一旁幸灾乐祸的工作人员，将自己<span style="color:#ff2500">已经有些潮湿的头发</span>拢到了脑后，脸色有难看冷哼了一声<img style="display:inline-block;height:22px;vertical-align: bottom;" src="/assets/emoji.jpg"/>。这人究竟是怎么在JX活下来的？光是凭着她这种想法，要是有一天JX面临破产或者是其他什么倒霉事情，估计这个人二话不说就会把辞呈交上去。“好歹你也是一个美女，怎么气量这么小？”刘明昊说着，从自己的胸口掏出一个帕子将自己身上的水渍擦了下去，看着在自己前面两个大眼睛瞄来瞄去的夏雨溪，脸上满是疑问。</p>'
     };
   },
   methods: {
@@ -88,7 +88,7 @@ li {
   width: 90%;
   // max-width: 700px;
   min-width: 200px;
-  margin: 0 auto;
+  margin: 0 auto 50px;
 }
 h2 {
   padding: 20px 0;

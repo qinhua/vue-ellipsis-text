@@ -9,7 +9,7 @@
     <div class="ellipsis-container" :style="{'-webkit-line-clamp': line, 'fontSize': revealWidth + 'px'}" v-if="hasMore">
       <div class="ellipsis-content html" ref="txtContent" v-html="content" v-if="isHtml"></div>
       <div class="ellipsis-content more" ref="txtContent" v-else>{{content | trimEnter}}</div>
-      <div class="ellipsis-ghost" v-if="hasMore">
+      <div class="ellipsis-ghost">
         <div class="ellipsis-placeholder" :style="{'height': maxHeight}"></div>
         <div :class="['ellipsis-more', isHtml ? 'html' : '']" :style="{'width': revealWidth + 'px'}" @click="more">{{revealText}}</div>
       </div>
@@ -174,9 +174,9 @@ export default {
     -webkit-box-orient: vertical;
     font-size: 14px; /* f */
     white-space: pre-wrap;
-    &.more {
-      display: inline;
-    }
+    // &.more {
+      // display: inline;
+    // }
   }
   .ellipsis-ghost {
     position: absolute;
@@ -211,10 +211,10 @@ export default {
     margin-top: -22px; /* -h */
     cursor: pointer;
     color: #3a62f4;
-    &.html {
+    // &.html {
       padding-left: 20px;
       background: linear-gradient(left, #fff0 15%, #fff 46%);
-    }
+    // }
   }
   .ellipsis-fold-text {
     position: relative;
