@@ -38,6 +38,8 @@
 | revealWidth          | 更多按钮宽度（若文字被"更多"按钮覆盖，可自行调整此参数）                            | Number  | 70       |
 | revealText            | 更多按钮文案                                               | String | 【全部】     |
 | foldText           | 收起按钮文案                                         | String | 收起    |
+| revealTextColor            | 更多按钮文案颜色                                               | String | ''     |
+| foldTextColor          | 收起按钮文案颜色                                         | String | ''    |
 
 
 

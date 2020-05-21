@@ -1,7 +1,7 @@
 /**
   * ### Ellipsis-Text组件
   * 使用场景：1.适用于单行文字超出显示省略号；2.适用于多行文本超出指定行显示省略号（或追加【更多】按钮）
-  * props： [content-内容，line-默认标签数据，triggerMore-是否触发展开操作，hasMore-是否显示更多按钮，isHtml-是否html内容，revealWidth-更多按钮宽度，revealText-更多按钮文字，foldText-收起按钮文字]
+  * props： [content-内容，line-默认标签数据，triggerMore-是否触发展开操作，hasMore-是否显示更多按钮，isHtml-是否html内容，revealWidth-更多按钮宽度，revealText-更多按钮文字，foldText-收起按钮文字，revealTextColor-更多按钮颜色，foldTextColor-收起按钮颜色]
   * 事件：reveal（展开）、fold（收起）
 */  
 <template>
@@ -11,14 +11,14 @@
       <div class="ellipsis-content more" ref="txtContent" v-else>{{content | trimEnter}}</div>
       <div class="ellipsis-ghost">
         <div class="ellipsis-placeholder" :style="{'height': maxHeight}"></div>
-        <div :class="['ellipsis-more', isHtml ? 'html' : '']" :style="{'width': revealWidth + 'px'}" @click="more">{{revealText}}</div>
+        <div :class="['ellipsis-more', isHtml ? 'html' : '']" :style="{'width': revealWidth + 'px', 'color': revealTextColor}" @click="more">{{revealText}}</div>
       </div>
     </div>
     <div v-else>
       <div class="ellipsis-content" :style="{'-webkit-line-clamp': line}" ref="txtContent" v-html="content" v-if="isHtml"></div>
       <div class="ellipsis-content" :style="{'-webkit-line-clamp': line}" ref="txtContent" v-else>{{content | trimEnter}}</div>
     </div>
-    <div class="ellipsis-fold-text" v-if="showAll" @click="fold">{{foldText}}</div>
+    <div class="ellipsis-fold-text" :style="{'color': foldTextColor}" v-if="showAll" @click="fold">{{foldText}}</div>
   </div>
 </template>
 
@@ -69,7 +69,17 @@ export default {
     foldText: {
       type: String,
       default: '收起'
-    }
+    },
+    /* 更多按钮颜色 */
+    revealTextColor: {
+      type: String,
+      default: ''
+    },
+    /* 收起按钮颜色 */
+    foldTextColor: {
+      type: String,
+      default: ''
+    },
   },
   data() {
     return {

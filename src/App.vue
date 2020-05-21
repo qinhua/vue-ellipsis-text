@@ -7,8 +7,8 @@
         <ellipsis-text :content="content"/>
       </li>
       <li>
-        <h3>2.单行文字超出显示【更多】</h3>      
-        <ellipsis-text :content="content" :hasMore="true"/>
+        <h3>2.单行文字超出显示【更多】,自定义按钮颜色</h3>      
+        <ellipsis-text :content="content" :hasMore="true" revealTextColor="orange" foldTextColor="red"/>
       </li>
       <li>
         <h3>3.多行(2行)文字超出显示...</h3>      
@@ -30,6 +30,7 @@
     <p class="copyright">Copyright©2020 Chin All Rights Reserved.</p>
   </div>
 </template>
+
 <script>
 import EllipsisText from "./ellipsisText/EllipsisText";
 // import EllipsisText from "../dist/ellipsisText.umd";
