@@ -1,7 +1,7 @@
 ![](./assets/logo.png) 
 <p>
   <img alt="GitHub release" src="https://img.shields.io/badge/release-v1.0.0-orange.svg?style=for-the-badge"/>
-  <img alt="vue" src="https://img.shields.io/badge/vue-2.5.11-green.svg?style=for-the-badge"/>
+  <img alt="vue" src="https://img.shields.io/badge/vue-2.5.11-green"/>
 </p>
 
 > *A vue component for web developers.*<br>
