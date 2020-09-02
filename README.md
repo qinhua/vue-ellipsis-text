@@ -41,7 +41,14 @@
 | revealTextColor            | 更多按钮文案颜色                                               | String | ''     |
 | foldTextColor          | 收起按钮文案颜色                                         | String | ''    |
 
+**slot**
 
+支持通过slot的传入内容，优先级高于通过content传入的内容，同时使用只会展示slot传入的内容
+```
+<ellipsis-text :hasMore="true">
+  <div>我是通过slot插入的内容，优先级高于通过content传入的内容</div>
+</ellipsis-text>
+```
 
 **事件**
 

@@ -23,7 +23,13 @@
         <ellipsis-text :content="htmlContent" :hasMore="true" :isHtml="true" :line="3"/>
       </li>
       <li>
-        <h3>6.监听文字展开与收起事件</h3>        
+        <h3>6.使用slot插入内容（!!会覆盖默认的content)</h3>      
+        <ellipsis-text :content="content" :hasMore="true">
+          <div>我是通过slot插入的内容，优先级高于通过content传入的内容</div>
+        </ellipsis-text>
+      </li>
+      <li>
+        <h3>7.监听文字展开与收起事件</h3>        
         <ellipsis-text :content="content" :line="2" :hasMore="true" ref="ellipsisText" @reveal="show" @fold="hide"/>
       </li>
     </ul>    
