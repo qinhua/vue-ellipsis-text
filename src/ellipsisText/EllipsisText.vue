@@ -42,7 +42,6 @@
         class="ellipsis-content"
         :style="{'-webkit-line-clamp': line}"
         ref="txtContent"
-        v-html="content"
         v-if="isHtml"
       >
         <template v-if="$slots.default">
