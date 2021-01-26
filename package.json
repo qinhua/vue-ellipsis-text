@@ -32,9 +32,6 @@
     "build:umd": "webpack --config config/webpack.config.umd.js --hide-modules",
     "build": "npm run build:amd && npm run build:cmd && npm run build:umd"
   },
-  "dependencies": {
-    "vue": "^2.5.11"
-  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
@@ -42,9 +39,10 @@
     "iOS 7",
     "last 3 iOS versions"
   ],
+  "dependencies": {
+    "vue": "^2.5.11"
+  },
   "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.28",
-    "autoprefixer": "^9.2.1",
     "babel-core": "^6.26.0",
     "babel-jest": "^23.6.0",
     "babel-loader": "^7.1.2",
@@ -60,15 +58,17 @@
     "eslint-plugin-prettier": "^3.0.0",
     "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^23.6.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "postcss-loader": "^3.0.0",
-    "style-loader": "^0.23.1",
-    "url-loader": "^1.1.2",
+    "autoprefixer": "^9.2.1",
     "vue-jest": "^3.0.0",
     "vue-loader": "^13.0.5",
     "vue-template-compiler": "^2.6.11",
+    "jest": "^23.6.0",
+    "@vue/test-utils": "^1.0.0-beta.28",
     "webpack": "^3.12.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^2.9.7"

@@ -6,10 +6,13 @@
   * 事件：reveal（展开）、fold（收起）
 */  
 <template>
-  <div :class="['vx-ellipsis-text', showAll ? 'reveal' : '']" :style="{'max-height': maxHeight}">
+  <div
+    :class="['vx-ellipsis-text', showAll ? 'reveal' : '']"
+    :style="{ 'max-height': maxHeight }"
+  >
     <div
       class="ellipsis-container"
-      :style="{'-webkit-line-clamp': line, 'fontSize': revealWidth + 'px'}"
+      :style="{ '-webkit-line-clamp': line, fontSize: revealWidth + 'px' }"
       v-if="hasMore"
     >
       <div class="ellipsis-content html" ref="txtContent" v-if="isHtml">
@@ -25,22 +28,24 @@
           <slot></slot>
         </template>
         <template v-else>
-          <div>{{content | trimEnter}}</div>
+          <div>{{ content | trimEnter }}</div>
         </template>
       </div>
       <div class="ellipsis-ghost">
-        <div class="ellipsis-placeholder" :style="{'height': maxHeight}"></div>
+        <div class="ellipsis-placeholder" :style="{ height: maxHeight }"></div>
         <div
           :class="['ellipsis-more', isHtml ? 'html' : '']"
-          :style="{'width': revealWidth + 'px', 'color': revealTextColor}"
+          :style="{ width: revealWidth + 'px', color: revealTextColor }"
           @click="more"
-        >{{revealText}}</div>
+        >
+          {{ revealText }}
+        </div>
       </div>
     </div>
     <div v-else>
       <div
         class="ellipsis-content"
-        :style="{'-webkit-line-clamp': line}"
+        :style="{ '-webkit-line-clamp': line }"
         ref="txtContent"
         v-if="isHtml"
       >
@@ -51,26 +56,34 @@
           <div v-html="content"></div>
         </template>
       </div>
-      <div class="ellipsis-content" :style="{'-webkit-line-clamp': line}" ref="txtContent" v-else>
+      <div
+        class="ellipsis-content"
+        :style="{ '-webkit-line-clamp': line }"
+        ref="txtContent"
+        v-else
+      >
         <template v-if="$slots.default">
           <slot></slot>
         </template>
         <template v-else>
-          <div>{{content | trimEnter}}</div>
+          <div>{{ content | trimEnter }}</div>
         </template>
       </div>
     </div>
     <div
       class="ellipsis-fold-text"
-      :style="{'color': foldTextColor}"
+      :style="{ color: foldTextColor }"
       v-if="showAll"
       @click="fold"
-    >{{foldText}}</div>
+    >
+      {{ foldText }}
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  name: "ellipsis-text",
   filters: {
     trimEnter(data) {
       return data ? data.replace(/[\r\n]/g, "") : "";
@@ -191,15 +204,6 @@ export default {
  * ...更多容器的宽 w
  */
 .vx-ellipsis-text {
-  @keyframes width-change {
-    0%,
-    100% {
-      width: 100%;
-    }
-    50% {
-      width: 30%;
-    }
-  }
   position: relative;
   width: 100%;
   max-height: 66px; /* h*n */
@@ -257,13 +261,13 @@ export default {
     height: 66px; /* h*n */
   }
   .ellipsis-more {
+    cursor: pointer;
     float: right;
     text-align: right;
     font-size: 14px; /* f */
     width: 70px; /* w */
     height: 22px; /* h */
     margin-top: -22px; /* -h */
-    cursor: pointer;
     color: #3a62f4;
     // &.html {
     padding-left: 20px;
@@ -283,6 +287,16 @@ export default {
     .ellipsis-container {
       display: block !important;
     }
+  }
+}
+
+@keyframes width-change {
+  0%,
+  100% {
+    width: 100%;
+  }
+  50% {
+    width: 30%;
   }
 }
 </style>
